@@ -1,0 +1,11 @@
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.deps.json
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.runtimeconfig.json
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.runtimeconfig.dev.json
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.dll
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.pdb
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.csprojAssemblyReference.cache
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.csproj.CoreCompileInputs.cache
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.AssemblyInfoInputs.cache
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.AssemblyInfo.cs
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.dll
+/Users/helena.franczak/RiderProjects/MasterMind/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.pdb
