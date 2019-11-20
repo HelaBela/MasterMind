@@ -34,6 +34,12 @@
           <e p="INumberGenerator.cs" t="Include" />
           <e p="RandomNumberGenerator.cs" t="Include" />
         </e>
+        <e p="Validations" t="Include">
+          <e p="CorrectColorCount.cs" t="Include" />
+          <e p="CorrectColorValidator.cs" t="Include" />
+          <e p="InputValidator.cs" t="Include" />
+          <e p="IValidation.cs" t="Include" />
+        </e>
       </e>
       <e p="MasterMind.sln" t="IncludeFlat" />
       <e p="MasterMind.Tests" t="IncludeRecursive">

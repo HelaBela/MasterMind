@@ -38,6 +38,7 @@ namespace MasterMind
             
             var chosenColors = ProcessUserInput(input);
             var correctColors = new List<Colors>();
+//            var commaCounter = input.Split(',').Length;
             var comaCounter = input.Count(s => s == ',');
 
             if (comaCounter == 3)

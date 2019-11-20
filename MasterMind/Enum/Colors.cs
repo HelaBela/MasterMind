@@ -2,11 +2,11 @@ namespace MasterMind
 {
     public enum Colors
     {
-        Red ,
-        Blue ,
-        Green,
-        Orange,
-        Purple,
-        Yellow
+        red ,
+        blue ,
+        green,
+        orange,
+        purple,
+        yellow
     }
 }
