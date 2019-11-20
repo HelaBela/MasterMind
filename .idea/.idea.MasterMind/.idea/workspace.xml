@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb7a7232-6cf5-4687-a631-cbb31afa35f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MasterMind/InputIsNotNull.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterMind/Enum/Colors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Enum/Colors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterMind/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/PlayerInput.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/Validations/InputNotNullValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Validations/IsNotNullValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.pdb" afterDir="false" />
@@ -29,8 +29,6 @@
     <setting file="file://$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind/Validations/IValidation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind/Validations/CorrectColorValidator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MasterMind/InputIsNotNull.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MasterMind/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind.Tests/PlayerTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind/Enum/Hint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.local/share/Symbols/src/nunit/nunit/4530d6dba175fae6ff8f8ade6c07fd05e6c1c7c5/src/NUnitFramework/framework/Internal/Commands/BeforeAndAfterTestCommand.cs" root0="SKIP_HIGHLIGHTING" />
@@ -48,7 +46,8 @@
     <setting file="file://$PROJECT_DIR$/MasterMind/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind.Tests/InitialColorsProviderTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMindTests/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MasterMind/Validations/CorrectColorCount.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MasterMind/Validations/IsNotNullValidator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -79,15 +78,18 @@
         <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColourValidator.cs" />
         <option value="$PROJECT_DIR$/MasterMind/ColorAmount.cs" />
         <option value="$PROJECT_DIR$/MasterMind/ColorCountValidator.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColorValidator.cs" />
         <option value="$PROJECT_DIR$/MasterMind/Enum/Colors.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs" />
         <option value="$PROJECT_DIR$/MasterMind/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/MasterMind/CorrectAmountOfComas.cs" />
         <option value="$PROJECT_DIR$/MasterMind/Validations/IValidation.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/Program.cs" />
         <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCount.cs" />
         <option value="$PROJECT_DIR$/MasterMind/InputIsNotNull.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/InputNotNullValidator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColorValidator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/IsNotNullValidator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Program.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs" />
       </list>
     </option>
   </component>
@@ -150,7 +152,7 @@
       <workItem from="1573688047647" duration="917000" />
       <workItem from="1573689438168" duration="9498000" />
       <workItem from="1573970794660" duration="1977000" />
-      <workItem from="1574121687769" duration="38845000" />
+      <workItem from="1574121687769" duration="42371000" />
     </task>
     <servers />
   </component>
@@ -180,32 +182,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs</url>
-          <line>37</line>
-          <properties documentPath="$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs" initialLine="37">
-            <startOffsets>
-              <option value="1119" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1151" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs</url>
-          <line>45</line>
-          <properties documentPath="$PROJECT_DIR$/MasterMind/Validations/InputValidator.cs" initialLine="45">
-            <startOffsets>
-              <option value="1526" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1594" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

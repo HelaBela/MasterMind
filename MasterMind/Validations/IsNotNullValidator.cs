@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MasterMind
 {
-    public class InputIsNotNullValidator:IValidation
+    public class IsNotNullValidator:IValidation
     {
         public bool IsValid(List<string> userInput)
         {
-            if (userInput.Count == 1 && userInput.Contains(String.Empty) )
+            foreach (var color in userInput)
             {
-                return false;
+                if (color.All(char.IsWhiteSpace)) return false;
             }
 
             return true;
@@ -17,8 +18,7 @@ namespace MasterMind
 
         public string DisplayErrorMessage()
         {
-            return
-                "Error: You need to type something!";
+            return "Error: You need to write something!";
         }
     }
 }

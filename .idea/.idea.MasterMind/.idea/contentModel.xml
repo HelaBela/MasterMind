@@ -20,7 +20,6 @@
         </e>
         <e p="Game.cs" t="Include" />
         <e p="InitialColorsProvider.cs" t="Include" />
-        <e p="InputIsNotNull.cs" t="Include" />
         <e p="MasterMind.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -29,16 +28,16 @@
             </e>
           </e>
         </e>
-        <e p="PlayerInput.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="RandomChooser" t="Include">
           <e p="INumberGenerator.cs" t="Include" />
           <e p="RandomNumberGenerator.cs" t="Include" />
         </e>
         <e p="Validations" t="Include">
-          <e p="CorrectColorCount.cs" t="Include" />
+          <e p="CorrectColorCountValidator.cs" t="Include" />
           <e p="CorrectColorValidator.cs" t="Include" />
           <e p="InputValidator.cs" t="Include" />
+          <e p="IsNotNullValidator.cs" t="Include" />
           <e p="IValidation.cs" t="Include" />
         </e>
       </e>

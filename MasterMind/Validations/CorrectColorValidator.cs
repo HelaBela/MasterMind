@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MasterMind
 {
@@ -11,7 +12,7 @@ namespace MasterMind
             {
                 var isAColor = Enum.TryParse(color, out Colors validColour);
 
-                if (!isAColor) return false;
+                if (!isAColor && !color.All(char.IsWhiteSpace)) return false;
             }
 
             return true;

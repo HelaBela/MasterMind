@@ -17,30 +17,40 @@ namespace MasterMind
 
         public string[] GetValidUserInput()
         {
-            var hasAllValidationsPassed = false;
-            var input = string.Empty;
             var splitInputLowerCase = new List<string>();
+            var listOfPassedValidations = new List<IValidation>();
 
-            while (!hasAllValidationsPassed)
+            while (listOfPassedValidations.Count != _validations.Count)
             {
-                Console.WriteLine(
-                    "Type 4 colors from this range: Red, Blue, Green, Orange, Purple, Yellow, separated with a coma: ','");
-                input = _communicationOperations.Read();
+                var input = GetUserInput();
+
+                if (ComaCount(input) != 3)
+                {
+                    _communicationOperations.WriteLine("Please use a coma to separate your colors");
+                }
 
                 splitInputLowerCase = UserInputToLowerCase(input);
                 foreach (var validation in _validations)
                 {
-                    hasAllValidationsPassed = validation.IsValid(splitInputLowerCase);
-
                     if (!validation.IsValid(splitInputLowerCase))
                     {
                         Console.WriteLine(validation.DisplayErrorMessage());
                     }
+                    else listOfPassedValidations.Add(validation);
                 }
             }
+
             return splitInputLowerCase.ToArray();
         }
-        
+
+        private string GetUserInput()
+        {
+            _communicationOperations.WriteLine(
+                "Type 4 colors from this range: Red, Blue, Green, Orange, Purple, Yellow, separated with a coma: ','");
+            var input = _communicationOperations.Read();
+            return input;
+        }
+
         private List<string> UserInputToLowerCase(string userInput)
         {
             var splitInput = userInput.Split(",");
@@ -55,9 +65,11 @@ namespace MasterMind
             return splitInputList;
         }
 
-//        private string CapitalizeFirstLetter(string word)
-//        {
-//            return word.First().ToString().ToUpper() + word.Substring(1);
-//        }
+        private int ComaCount(string userInput)
+        {
+            var comaCounter = userInput.Split(',').Length;
+
+            return comaCounter;
+        }
     }
 }
