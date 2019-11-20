@@ -2,19 +2,15 @@ using System.Collections.Generic;
 
 namespace MasterMind
 {
-    public class CorrectColorCount : IValidation
+    public class CorrectColorCountValidator : IValidation
     {
         public bool IsValid(List<string> userInput)
         {
-            var colorValidator = new CorrectColorValidator();
-
-            if (colorValidator.IsValid(userInput))
+            if (userInput.Count != 4)
             {
-                if (userInput.Count != 4)
-                {
-                    return false;
-                }
+                return false;
             }
+
 
             return true;
         }

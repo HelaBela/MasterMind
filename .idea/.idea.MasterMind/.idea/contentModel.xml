@@ -20,6 +20,7 @@
         </e>
         <e p="Game.cs" t="Include" />
         <e p="InitialColorsProvider.cs" t="Include" />
+        <e p="InputIsNotNull.cs" t="Include" />
         <e p="MasterMind.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

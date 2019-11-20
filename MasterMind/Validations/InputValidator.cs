@@ -19,48 +19,45 @@ namespace MasterMind
         {
             var hasAllValidationsPassed = false;
             var input = string.Empty;
+            var splitInputLowerCase = new List<string>();
 
             while (!hasAllValidationsPassed)
             {
-                Console.WriteLine("enter 4 colors");
+                Console.WriteLine(
+                    "Type 4 colors from this range: Red, Blue, Green, Orange, Purple, Yellow, separated with a coma: ','");
                 input = _communicationOperations.Read();
-                var splitInput = input.Split(",");
-                var lowerCaseWord = string.Empty;
-                var splitInputList = new List<string>();
 
-                foreach (var word in splitInput)
-                {
-                    lowerCaseWord = word.ToLower();
-                }
-
-                splitInputList.Add(lowerCaseWord);
-
-
+                splitInputLowerCase = UserInputToLowerCase(input);
                 foreach (var validation in _validations)
                 {
-                    hasAllValidationsPassed = validation.IsValid(splitInputList);
+                    hasAllValidationsPassed = validation.IsValid(splitInputLowerCase);
 
-                    if (!validation.IsValid(splitInputList))
+                    if (!validation.IsValid(splitInputLowerCase))
                     {
                         Console.WriteLine(validation.DisplayErrorMessage());
                     }
                 }
             }
+            return splitInputLowerCase.ToArray();
+        }
+        
+        private List<string> UserInputToLowerCase(string userInput)
+        {
+            var splitInput = userInput.Split(",");
+            var splitInputList = new List<string>();
 
-            var inputStringArray = input.Split(",");
-            var capitalizedInput = new List<string>();
-            foreach (var word in inputStringArray)
+            foreach (var word in splitInput)
             {
-                capitalizedInput.Add(CapitalizeFirstLetter(word));
+                var lowerCaseWord = word.ToLower();
+                splitInputList.Add(lowerCaseWord);
             }
 
-            return capitalizedInput.ToArray();
+            return splitInputList;
         }
 
-        private string CapitalizeFirstLetter(string word)
-        {
-
-            return word.First().ToString().ToUpper() + word.Substring(1);
-        }
+//        private string CapitalizeFirstLetter(string word)
+//        {
+//            return word.First().ToString().ToUpper() + word.Substring(1);
+//        }
     }
 }

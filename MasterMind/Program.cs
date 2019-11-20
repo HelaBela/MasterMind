@@ -9,7 +9,7 @@ namespace MasterMind
         {
             var communication = new ConsoleOperations();
 
-            var validations = new List<IValidation> {new CorrectColorValidator(), new CorrectColorCount()};
+            var validations = new List<IValidation> {new CorrectColorValidator(), new CorrectColorCountValidator(), new InputIsNotNullValidator()};
             var validator = new InputValidator(validations,communication);
 
             validator.GetValidUserInput();
