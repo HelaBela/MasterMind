@@ -1,6 +1,6 @@
 using System;
 
-namespace MasterMind
+namespace MasterMind.NumberGenerator
 {
     public class RandomNumberGenerator:INumberGenerator
     {

@@ -1,4 +1,4 @@
-namespace MasterMind
+namespace MasterMind.Communication
 {
     public interface ICommunicationOperations
     {

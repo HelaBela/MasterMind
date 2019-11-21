@@ -1,12 +1,12 @@
-namespace MasterMind
+namespace MasterMind.Enum
 {
     public enum Colors
     {
-        red,
-        blue,
-        green,
-        orange,
-        purple,
-        yellow
+        Red,
+        Blue,
+        Green,
+        Orange,
+        Purple,
+        Yellow
     }
 }

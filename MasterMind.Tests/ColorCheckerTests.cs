@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using MasterMind;
+using MasterMind.ColorProviders;
+using MasterMind.Enum;
+using MasterMind.NumberGenerator;
 using Moq;
 using NUnit.Framework;
 
@@ -28,7 +31,7 @@ namespace Tests
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(1).Returns(2).Returns(3)
                 .Returns(4);
 
-            var initialColors = initialColorsProvider.PickRandomColors();
+            var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new string[] {"red", "blue", "orange", "purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
@@ -55,7 +58,7 @@ namespace Tests
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(4).Returns(4).Returns(2)
                 .Returns(2);
 
-            var initialColors = initialColorsProvider.PickRandomColors();
+            var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new string[] {"red", "blue", "purple", "purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
@@ -83,7 +86,7 @@ namespace Tests
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(1).Returns(0).Returns(5)
                 .Returns(5);
 
-            var initialColors = initialColorsProvider.PickRandomColors();
+            var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new string[] {"red", "blue", "orange", "purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
@@ -107,7 +110,7 @@ namespace Tests
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(0).Returns(1).Returns(5)
                 .Returns(5);
 
-            var initialColors = initialColorsProvider.PickRandomColors();
+            var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new string[] {"red", "blue", "orange", "purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
@@ -133,7 +136,7 @@ namespace Tests
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(1).Returns(2).Returns(3)
                 .Returns(4);
 
-            var initialColors = initialColorsProvider.PickRandomColors();
+            var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new string[] {"red", "blue", "orange", "purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
@@ -145,6 +148,8 @@ namespace Tests
             //Assert
 
             Assert.AreEqual(2, sameColorsSamePosition);
+            
+            ///all red
         }
     }
 }

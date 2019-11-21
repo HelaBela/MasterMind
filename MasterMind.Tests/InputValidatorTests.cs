@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using MasterMind;
+using MasterMind.ColorProviders;
+using MasterMind.Communication;
+using MasterMind.Validations;
 using Moq;
 using NUnit.Framework;
 
@@ -15,13 +18,13 @@ namespace Tests
             var consoleOperations = new Mock<ICommunicationOperations>();
             var validations = new List<IValidation>
                 {new CorrectColorValidator(), new CorrectColorCountValidator(), new IsNotNullValidator()};
-            var validator = new InputValidator(validations, consoleOperations.Object);
+            var validator = new UserColorsProvider(validations, consoleOperations.Object);
             
-            consoleOperations.SetupSequence(s => s.Read()).Returns("Green,Red,Blue,Orange");
+            consoleOperations.SetupSequence(s => s.Read()).Returns("green,red,blue,orange");
 
             //act 
 
-            var colors = validator.GetValidUserInput();
+            var colors = validator.ProvideColors();
             var expectedColors = new string[] {"green", "red", "blue", "orange"};
             
             //assert
@@ -37,13 +40,13 @@ namespace Tests
             var consoleOperations = new Mock<ICommunicationOperations>();
             var validations = new List<IValidation>
                 {new CorrectColorValidator(), new CorrectColorCountValidator(), new IsNotNullValidator()};
-            var validator = new InputValidator(validations, consoleOperations.Object);
+            var validator = new UserColorsProvider(validations, consoleOperations.Object);
             
             consoleOperations.SetupSequence(s => s.Read()).Returns("Green    ,Red    ,Blue , Orange");
 
             //act 
 
-            var colors = validator.GetValidUserInput();
+            var colors = validator.ProvideColors();
             var expectedColors = new string[] {"green", "red", "blue", "orange"};
             
             //assert
@@ -59,13 +62,13 @@ namespace Tests
             var consoleOperations = new Mock<ICommunicationOperations>();
             var validations = new List<IValidation>
                 {new CorrectColorValidator(), new CorrectColorCountValidator(), new IsNotNullValidator()};
-            var validator = new InputValidator(validations, consoleOperations.Object);
+            var validator = new UserColorsProvider(validations, consoleOperations.Object);
             
             consoleOperations.SetupSequence(s => s.Read()).Returns("Green Red Blue Orange").Returns("Green ,Red ,Blue, Red");
 
             //act 
 
-            var colors = validator.GetValidUserInput();
+            var colors = validator.ProvideColors();
             var expectedColors = new string[] {"green", "red", "blue", "red"};
             
             //assert
@@ -86,13 +89,13 @@ namespace Tests
 
             var validations = new List<IValidation>
                 {new CorrectColorValidator(), new CorrectColorCountValidator(), new IsNotNullValidator()};
-            var validator = new InputValidator(validations, consoleOperations.Object);
+            var validator = new UserColorsProvider(validations, consoleOperations.Object);
 
             consoleOperations.SetupSequence(s => s.Read()).Returns("Green, Red, Blue, Orange, Purple").Returns(" Red, Blue, Orange, Red");
 
             //act 
 
-            var colors = validator.GetValidUserInput();
+            var colors = validator.ProvideColors();
             var expectedColors = new string[] {"red", "blue", "orange", "red"};
 
             //assert
@@ -113,14 +116,14 @@ namespace Tests
 
             var validations = new List<IValidation>
                 {new CorrectColorValidator(), new CorrectColorCountValidator(), new IsNotNullValidator()};
-            var validator = new InputValidator(validations, consoleOperations.Object);
+            var validator = new UserColorsProvider(validations, consoleOperations.Object);
 
 
             consoleOperations.SetupSequence(s => s.Read()).Returns("Green, Red, Blue, Pink").Returns("Green, Red, Blue, Blue");
 
             //act 
 
-            var colors = validator.GetValidUserInput();
+            var colors = validator.ProvideColors();
             var expectedColors = new string[] {"green", "red", "blue", "blue"};
 
             //assert
@@ -141,13 +144,13 @@ namespace Tests
 
             var validations = new List<IValidation>
                 {new CorrectColorValidator(), new CorrectColorCountValidator(), new IsNotNullValidator()};
-            var validator = new InputValidator(validations, consoleOperations.Object);
+            var validator = new UserColorsProvider(validations, consoleOperations.Object);
 
             consoleOperations.SetupSequence(s => s.Read()).Returns("GrEEn, REd, blue, bluE");
 
             //act 
 
-            var colors = validator.GetValidUserInput();
+            var colors = validator.ProvideColors();
             var expectedColors = new string[] {"green", "red", "blue", "blue"};
 
             //assert

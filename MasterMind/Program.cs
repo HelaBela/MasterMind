@@ -1,32 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using MasterMind.ColorProviders;
+using MasterMind.Communication;
+using MasterMind.NumberGenerator;
+using MasterMind.Validations;
 
 namespace MasterMind
 {
-    class Program
+    internal static class Program
     {
         static void Main(string[] args)
         {
             var communication = new ConsoleOperations();
 
             var validations = new List<IValidation> {new IsNotNullValidator(), new CorrectColorValidator(), new CorrectColorCountValidator()};
-            var validator = new InputValidator(validations,communication);
+            var userColorProvider = new UserColorsProvider(validations,communication);
 
-            var userColors = validator.GetValidUserInput();
+            var userColors = userColorProvider.ProvideColors();
             var initialColorsProvider = new InitialColorsProvider(new RandomNumberGenerator());
-            var initialColors = initialColorsProvider.PickRandomColors();
+            var initialColors = initialColorsProvider.ProvideColors();
+            
             var colorChecker = new ColorChecker(userColors, initialColors);
 
-            var foo = colorChecker.SameColorsDifferentPosition();
+            var game = new Game(colorChecker, communication);
             
-            communication.WriteLine($"{foo}");
-            
-            //var game = new Game(colorChecker, communication);
-            
-            //game.GiveTheHint();
-            
-            //var player = new PlayerInput(communication);
-//           player.GetColors();
+            game.Play();
+
         }
     }
 }

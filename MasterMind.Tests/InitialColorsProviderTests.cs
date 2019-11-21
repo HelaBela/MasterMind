@@ -1,5 +1,7 @@
 using System.Reflection;
 using MasterMind;
+using MasterMind.ColorProviders;
+using MasterMind.NumberGenerator;
 using NUnit.Framework;
 using Moq;
 
@@ -19,9 +21,9 @@ namespace Tests
             
             //act 
 
-            var expectedColors = new string[] {"Blue", "Green", "Green", "Red"};
+            var expectedColors = new string[] {"blue", "green", "green", "red"};
 
-            var randomColors = initialColorProvider.PickRandomColors();
+            var randomColors = initialColorProvider.ProvideColors();
             
             //assert
             Assert.AreEqual(expectedColors, randomColors);

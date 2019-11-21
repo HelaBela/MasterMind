@@ -1,21 +1,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MasterMind.Communication;
+using MasterMind.Validations;
 
-namespace MasterMind
+namespace MasterMind.ColorProviders
 {
-    public class InputValidator
+    public class UserColorsProvider:IColorProvider
     {
         private readonly List<IValidation> _validations;
         private readonly ICommunicationOperations _communicationOperations;
 
-        public InputValidator(List<IValidation> validations, ICommunicationOperations communicationOperations)
+        public UserColorsProvider(List<IValidation> validations, ICommunicationOperations communicationOperations)
         {
             _validations = validations;
             _communicationOperations = communicationOperations;
         }
 
-        public string[] GetValidUserInput()
+        public string[] ProvideColors()
         {
             var splitInputLowerCase = new List<string>();
             var listOfPassedValidations = new List<IValidation>();
@@ -31,8 +33,8 @@ namespace MasterMind
                     {
                         Console.WriteLine(validation.DisplayErrorMessage());
                         break;
-                    }
-                    else listOfPassedValidations.Add(validation);
+                    } 
+                    listOfPassedValidations.Add(validation);
                 }
             }
 

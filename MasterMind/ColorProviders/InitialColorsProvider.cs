@@ -1,28 +1,29 @@
-using System;
 using System.Collections.Generic;
+using MasterMind.Enum;
+using MasterMind.NumberGenerator;
 
-namespace MasterMind
+namespace MasterMind.ColorProviders
 {
-    public class InitialColorsProvider
+    public class InitialColorsProvider:IColorProvider
     {
-        private INumberGenerator _numberGenerator;
+        private readonly INumberGenerator _numberGenerator;
 
         public InitialColorsProvider(INumberGenerator numberGenerator)
         {
             _numberGenerator = numberGenerator;
         }
 
-        public string[] PickRandomColors()
+        public string[] ProvideColors()
         {
             var initialColors = new List<string>();
 
-            var values = Enum.GetValues(typeof(Colors));
+            var values = System.Enum.GetValues(typeof(Colors));
 
             for (int i = 0; i < 4; i++)
             {
                 var randomColor = (Colors) values.GetValue(_numberGenerator.RandomNumber(0, values.Length));
 
-                initialColors.Add(randomColor.ToString());
+                initialColors.Add(randomColor.ToString().ToLower());
             }
 
             return initialColors.ToArray();

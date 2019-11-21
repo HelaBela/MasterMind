@@ -1,4 +1,4 @@
-namespace MasterMind
+namespace MasterMind.NumberGenerator
 {
     public interface INumberGenerator
     {

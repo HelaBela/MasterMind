@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MasterMind
+namespace MasterMind.Validations
 {
     public class IsNotNullValidator:IValidation
     {

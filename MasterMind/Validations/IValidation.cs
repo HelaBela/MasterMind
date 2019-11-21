@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MasterMind
+namespace MasterMind.Validations
 {
     public interface IValidation
     {

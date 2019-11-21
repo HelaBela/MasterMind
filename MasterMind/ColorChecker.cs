@@ -5,8 +5,8 @@ namespace MasterMind
 {
     public class ColorChecker
     {
-        private string[] _userColors;
-        private string[] _initialColors;
+        private readonly string[] _userColors;
+        private readonly string[] _initialColors;
 
         public ColorChecker(string[] userColors, string[] initialColors)
         {

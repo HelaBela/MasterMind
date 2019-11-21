@@ -1,4 +1,4 @@
-namespace MasterMind
+namespace MasterMind.Enum
 {
     public enum Hint
     {

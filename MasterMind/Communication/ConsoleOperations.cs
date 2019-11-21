@@ -1,6 +1,6 @@
 using System;
 
-namespace MasterMind
+namespace MasterMind.Communication
 {
     public class ConsoleOperations : ICommunicationOperations
 

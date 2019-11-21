@@ -1,8 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using MasterMind.Enum;
 
-namespace MasterMind
+namespace MasterMind.Validations
 {
     public class CorrectColorValidator : IValidation
     {
@@ -10,7 +10,7 @@ namespace MasterMind
         {
             foreach (var color in userInput)
             {
-                var isAColor = Enum.TryParse(color, out Colors validColour);
+                var isAColor = System.Enum.TryParse(color, out Colors validColour);
 
                 if (!isAColor && !color.All(char.IsWhiteSpace)) return false;
             }
