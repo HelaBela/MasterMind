@@ -7,11 +7,6 @@ namespace Tests
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Can_Provide_4_random_Colors_In_Array()
         {

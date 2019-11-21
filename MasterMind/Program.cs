@@ -9,10 +9,21 @@ namespace MasterMind
         {
             var communication = new ConsoleOperations();
 
-            var validations = new List<IValidation> {new CorrectColorValidator(), new CorrectColorCountValidator(), new IsNotNullValidator()};
+            var validations = new List<IValidation> {new IsNotNullValidator(), new CorrectColorValidator(), new CorrectColorCountValidator()};
             var validator = new InputValidator(validations,communication);
 
-            validator.GetValidUserInput();
+            var userColors = validator.GetValidUserInput();
+            var initialColorsProvider = new InitialColorsProvider(new RandomNumberGenerator());
+            var initialColors = initialColorsProvider.PickRandomColors();
+            var colorChecker = new ColorChecker(userColors, initialColors);
+
+            var foo = colorChecker.SameColorsDifferentPosition();
+            
+            communication.WriteLine($"{foo}");
+            
+            //var game = new Game(colorChecker, communication);
+            
+            //game.GiveTheHint();
             
             //var player = new PlayerInput(communication);
 //           player.GetColors();

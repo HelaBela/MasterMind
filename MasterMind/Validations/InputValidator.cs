@@ -23,18 +23,14 @@ namespace MasterMind
             while (listOfPassedValidations.Count != _validations.Count)
             {
                 var input = GetUserInput();
-
-                if (ComaCount(input) != 3)
-                {
-                    _communicationOperations.WriteLine("Please use a coma to separate your colors");
-                }
-
+                listOfPassedValidations = new List<IValidation>();
                 splitInputLowerCase = UserInputToLowerCase(input);
                 foreach (var validation in _validations)
                 {
                     if (!validation.IsValid(splitInputLowerCase))
                     {
                         Console.WriteLine(validation.DisplayErrorMessage());
+                        break;
                     }
                     else listOfPassedValidations.Add(validation);
                 }
@@ -53,7 +49,7 @@ namespace MasterMind
 
         private List<string> UserInputToLowerCase(string userInput)
         {
-            var splitInput = userInput.Split(",");
+            var splitInput = userInput.Split(",").Select(s => s.Trim());
             var splitInputList = new List<string>();
 
             foreach (var word in splitInput)
@@ -65,11 +61,6 @@ namespace MasterMind
             return splitInputList;
         }
 
-        private int ComaCount(string userInput)
-        {
-            var comaCounter = userInput.Split(',').Length;
-
-            return comaCounter;
-        }
+       
     }
 }
