@@ -32,7 +32,7 @@ namespace Tests
                 .Returns(4);
 
             var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new string[] {"red", "blue", "orange", "purple"};
+            var userColors = new string[] {"Red", "Blue", "Orange", "Purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
 
@@ -59,7 +59,7 @@ namespace Tests
                 .Returns(2);
 
             var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new string[] {"red", "blue", "purple", "purple"};
+            var userColors = new string[] {"Red", "Blue", "Purple", "Purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
 
@@ -87,7 +87,7 @@ namespace Tests
                 .Returns(5);
 
             var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new string[] {"red", "blue", "orange", "purple"};
+            var userColors = new string[] {"Red", "Blue", "Orange", "Purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
 
@@ -111,7 +111,7 @@ namespace Tests
                 .Returns(5);
 
             var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new string[] {"red", "blue", "orange", "purple"};
+            var userColors = new string[] {"Red", "Blue", "Orange", "Purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
 
@@ -137,7 +137,7 @@ namespace Tests
                 .Returns(4);
 
             var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new string[] {"red", "blue", "orange", "purple"};
+            var userColors = new string[] {"Red", "Blue", "Orange", "Purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
 
@@ -148,8 +148,107 @@ namespace Tests
             //Assert
 
             Assert.AreEqual(2, sameColorsSamePosition);
-            
-            ///all red
+        }
+
+        [Test]
+        public void
+            When_User_Provides_All_Colors_Green_And_Computer_Gives_3_Reds_And_One_Green_SameColorDifferentPosition_Returns_0()
+        {
+            //Arrange
+
+            var randomNumberGenerator = new Mock<INumberGenerator>();
+            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
+            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(0).Returns(0).Returns(0)
+                .Returns(2);
+
+            var initialColors = initialColorsProvider.ProvideColors();
+            var userColors = new string[] {"Green", "Green", "Green", "Green"};
+
+            var colorChecker = new ColorChecker(userColors, initialColors);
+
+            //Act
+
+            var sameColorDifferentPosition = colorChecker.SameColorsDifferentPosition();
+
+            //Assert
+
+            Assert.AreEqual(0, sameColorDifferentPosition);
+        }
+
+        [Test]
+        public void
+            When_User_Provides_All_Colors_Green_And_Computer_Gives_3_Reds_And_One_Green_SameColorSamePosition_Returns_1()
+        {
+            //Arrange
+
+            var randomNumberGenerator = new Mock<INumberGenerator>();
+            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
+            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(0).Returns(0).Returns(0)
+                .Returns(2);
+
+            var initialColors = initialColorsProvider.ProvideColors();
+            var userColors = new string[] {"Green", "Green", "Green", "Green"};
+
+            var colorChecker = new ColorChecker(userColors, initialColors);
+
+            //Act
+
+            var sameColorSamePosition = colorChecker.SameColorsSamePosition();
+
+            //Assert
+
+            Assert.AreEqual(1, sameColorSamePosition);
+        }
+        
+
+        [Test]
+        public void
+            When_User_Provides_Green_Red_Red_Green_And_Computer_Provides_5_Yellow_And_Green_SameColorDifferentPosition_Returns_0()
+        {
+            //Arrange
+
+            var randomNumberGenerator = new Mock<INumberGenerator>();
+            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
+            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(5).Returns(5).Returns(5)
+                .Returns(2);
+
+            var initialColors = initialColorsProvider.ProvideColors();
+            var userColors = new string[] {"Green", "Red", "Red", "Green"};
+
+            var colorChecker = new ColorChecker(userColors, initialColors);
+
+            //Act
+
+            var sameColorDifferentPosition = colorChecker.SameColorsDifferentPosition();
+
+            //Assert
+
+            Assert.AreEqual(0, sameColorDifferentPosition);
+        }
+
+        [Test]
+        public void
+            When_User_Provides_Green_Red_Red_Green_And_Computer_Provides_5_Yellow_And_Green_SameColorSamePosition_Returns_1()
+        {
+            //Arrange
+
+            var randomNumberGenerator = new Mock<INumberGenerator>();
+            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
+            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(5).Returns(5).Returns(5)
+                .Returns(2);
+
+            var initialColors = initialColorsProvider.ProvideColors();
+            var userColors = new string[] {"Green", "Red", "Red", "Green"};
+
+            var colorChecker = new ColorChecker(userColors, initialColors);
+
+            //Act
+
+            var sameColorSamePosition = colorChecker.SameColorsSamePosition();
+
+            //Assert
+
+            Assert.AreEqual(1, sameColorSamePosition);
         }
     }
 }

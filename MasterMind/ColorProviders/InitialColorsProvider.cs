@@ -23,7 +23,7 @@ namespace MasterMind.ColorProviders
             {
                 var randomColor = (Colors) values.GetValue(_numberGenerator.RandomNumber(0, values.Length));
 
-                initialColors.Add(randomColor.ToString().ToLower());
+                initialColors.Add(randomColor.ToString());
             }
 
             return initialColors.ToArray();

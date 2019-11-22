@@ -21,7 +21,7 @@ namespace Tests
             
             //act 
 
-            var expectedColors = new string[] {"blue", "green", "green", "red"};
+            var expectedColors = new string[] {"Blue", "Green", "Green", "Red"};
 
             var randomColors = initialColorProvider.ProvideColors();
             

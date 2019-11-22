@@ -9,6 +9,7 @@ namespace MasterMind
         private readonly ColorChecker _colorChecker;
         private readonly ICommunicationOperations _communicationOperations;
         private readonly List<Hint> _hints;
+        private int _counter;
 
         public Game(ColorChecker colorChecker, ICommunicationOperations communicationOperations)
         {
@@ -35,9 +36,8 @@ namespace MasterMind
 
         public void Play()
         {
-            
-            // make a while loop and end to end tests. check the design again
             UpdateHintsList();
+            
             if (_hints.Count > 0)
             {
                 foreach (var hint in _hints)

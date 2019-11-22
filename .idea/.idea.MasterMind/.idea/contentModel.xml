@@ -9,6 +9,7 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="MasterMind" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CapitalLetterHelper.cs" t="Include" />
         <e p="ColorChecker.cs" t="Include" />
         <e p="ColorProviders" t="Include">
           <e p="IColorProvider.cs" t="Include" />
@@ -50,7 +51,6 @@
         <e p="ColorCheckerTests.cs" t="Include" />
         <e p="GameTests.cs" t="Include" />
         <e p="InitialColorsProviderTests.cs" t="Include" />
-        <e p="InputValidatorTests.cs" t="Include" />
         <e p="MasterMind.Tests.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -61,6 +61,7 @@
           </e>
         </e>
         <e p="ProgramTests.cs" t="Include" />
+        <e p="UserColorProviderTests.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>

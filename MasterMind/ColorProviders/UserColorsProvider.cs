@@ -56,7 +56,7 @@ namespace MasterMind.ColorProviders
 
             foreach (var word in splitInput)
             {
-                var lowerCaseWord = word.ToLower();
+                var lowerCaseWord = word.ToLower().GetCapitalized();
                 splitInputList.Add(lowerCaseWord);
             }
 

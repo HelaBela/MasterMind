@@ -8,7 +8,7 @@ using NUnit.Framework;
 
 namespace Tests
 {
-    public class InputValidatorTests
+    public class UserColorProviderTests
     {
         [Test]
         public void User_Provides_Colors_GetValidUserInput_Returns_Chosen_Colors_Array()
@@ -25,7 +25,7 @@ namespace Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"green", "red", "blue", "orange"};
+            var expectedColors = new string[] {"Green", "Red", "Blue", "Orange"};
             
             //assert
 
@@ -47,7 +47,7 @@ namespace Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"green", "red", "blue", "orange"};
+            var expectedColors = new string[] {"Green", "Red", "Blue", "Orange"};
             
             //assert
 
@@ -69,7 +69,7 @@ namespace Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"green", "red", "blue", "red"};
+            var expectedColors = new string[] {"Green", "Red", "Blue", "Red"};
             
             //assert
             
@@ -96,7 +96,7 @@ namespace Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"red", "blue", "orange", "red"};
+            var expectedColors = new string[] {"Red", "Blue", "Orange", "Red"};
 
             //assert
 
@@ -124,7 +124,7 @@ namespace Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"green", "red", "blue", "blue"};
+            var expectedColors = new string[] {"Green", "Red", "Blue", "Blue"};
 
             //assert
 
@@ -151,7 +151,7 @@ namespace Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"green", "red", "blue", "blue"};
+            var expectedColors = new string[] {"Green", "Red", "Blue", "Blue"};
 
             //assert
             

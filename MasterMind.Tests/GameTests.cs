@@ -25,7 +25,7 @@ namespace Tests
                 .Returns(4);
 
             var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new string[] {"red", "blue", "orange", "purple"};
+            var userColors = new string[] {"Red", "Blue", "Orange", "Purple"};
 
             var colorChecker = new ColorChecker(userColors, initialColors);
 
