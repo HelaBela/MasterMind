@@ -1,50 +1,44 @@
-using System.Collections.Generic;
+using MasterMind.ColorProviders;
 using MasterMind.Communication;
-using MasterMind.Enum;
 
 namespace MasterMind
 {
     public class Game
     {
-        private readonly ColorChecker _colorChecker;
         private readonly ICommunicationOperations _communicationOperations;
-        private readonly List<Hint> _hints;
+        private UserColorsProvider _userColorsProvider;
         private int _counter;
 
-        public Game(ColorChecker colorChecker, ICommunicationOperations communicationOperations)
+        public Game(ICommunicationOperations communicationOperations, UserColorsProvider userColorsProvider)
         {
-            _colorChecker = colorChecker;
             _communicationOperations = communicationOperations;
-            _hints = new List<Hint>();
+            _userColorsProvider = userColorsProvider;
         }
 
-        private void UpdateHintsList()
+        public void Play(string[] initialColors)
         {
-            var whiteHints = _colorChecker.SameColorsDifferentPosition();
-            var blackHints = _colorChecker.SameColorsSamePosition();
+            var thereIsNoWinner = true;
 
-            for (int i = 1; i <= whiteHints; i++)
+            while (thereIsNoWinner)
             {
-                _hints.Add(Hint.White);
-            }
+                var userColors = _userColorsProvider.ProvideColors();
+                var colorChecker = new ColorChecker(userColors, initialColors);
+                var hints = new HintsProvider(colorChecker, _communicationOperations);
+                hints.GiveHints();
+                _counter++;
 
-            for (int i = 1; i <= blackHints; i++)
-            {
-                _hints.Add(Hint.Black);
-            }
-        }
-
-        public void Play()
-        {
-            UpdateHintsList();
-            
-            if (_hints.Count > 0)
-            {
-                foreach (var hint in _hints)
+                if (_counter == 60)
                 {
-                    _communicationOperations.WriteLine(hint.ToString());
+                    _communicationOperations.WriteLine("You lost. Only 60 attempts allowed.");
+                } 
+
+                if (colorChecker.SameColorsSamePosition() == 4)
+                {
+                    _communicationOperations.WriteLine("You won! Congratulations :)");
+                    thereIsNoWinner = false;
                 }
             }
+            
         }
     }
 }
