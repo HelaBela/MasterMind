@@ -11,7 +11,7 @@ namespace MasterMind
         private readonly ColorChecker _colorChecker;
         private readonly ICommunicationOperations _communicationOperations;
         private readonly List<Hint> _hints;
-       
+
         public HintsProvider(ColorChecker colorChecker, ICommunicationOperations communicationOperations)
         {
             _colorChecker = colorChecker;
@@ -19,10 +19,23 @@ namespace MasterMind
             _hints = new List<Hint>();
         }
 
+        public void GiveHints()
+        {
+            UpdateHintsList();
+
+            if (_hints.Count > 0)
+            {
+                foreach (var hint in _hints)
+                {
+                    _communicationOperations.WriteLine(hint.ToString());
+                }
+            }
+        }
+
         private void UpdateHintsList()
         {
-            var whiteHints = _colorChecker.SameColorsDifferentPosition();
-            var blackHints = _colorChecker.SameColorsSamePosition();
+            var whiteHints = _colorChecker.DifferentPositionMatchesCount();
+            var blackHints = _colorChecker.ExactMatchesCount();
 
             for (int i = 1; i <= whiteHints; i++)
             {
@@ -32,20 +45,6 @@ namespace MasterMind
             for (int i = 1; i <= blackHints; i++)
             {
                 _hints.Add(Hint.Black);
-            }
-        }
-
-        public void GiveHints()
-        {
-
-            UpdateHintsList();
-            
-            if (_hints.Count > 0)
-            {
-                foreach (var hint in _hints)
-                {
-                    _communicationOperations.WriteLine(hint.ToString());
-                }
             }
         }
     }

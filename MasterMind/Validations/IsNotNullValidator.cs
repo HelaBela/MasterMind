@@ -3,16 +3,11 @@ using System.Linq;
 
 namespace MasterMind.Validations
 {
-    public class IsNotNullValidator:IValidation
+    public class IsNotNullValidator : IValidation
     {
         public bool IsValid(List<string> userInput)
         {
-            foreach (var color in userInput)
-            {
-                if (color.All(char.IsWhiteSpace)) return false;
-            }
-
-            return true;
+            return userInput.All(color => !color.All(char.IsWhiteSpace));
         }
 
         public string DisplayErrorMessage()

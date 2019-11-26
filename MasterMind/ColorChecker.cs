@@ -6,51 +6,63 @@ namespace MasterMind
     public class ColorChecker
     {
         private readonly string[] _userColors;
-        private readonly string[] _initialColors;
+        private readonly string[] _computerColors;
 
-        public ColorChecker(string[] userColors, string[] initialColors)
+        public ColorChecker(string[] userColors, string[] computerColors)
         {
             _userColors = userColors;
-            _initialColors = initialColors;
+            _computerColors = computerColors;
         }
 
-        public int SameColorsSamePosition()
+        private List<string> ExactMatchesList()
         {
-            var sameColorsSamePosition = 0;
+            var sameColorsSamePosition = new List<string>();
 
-            for (int i = 0; i < _initialColors.Length; i++)
+            for (int i = 0; i < _computerColors.Length; i++)
             {
-                if (_initialColors[i] == _userColors[i])
+                if (_computerColors[i] == _userColors[i])
                 {
-                    sameColorsSamePosition++;
+                    sameColorsSamePosition.Add(_computerColors[i]);
                 }
             }
 
             return sameColorsSamePosition;
         }
 
-        public int SameColorsDifferentPosition()
+        public int ExactMatchesCount()
         {
-            var sameColorsDifferentPosition = 0;
-            
+            var sameColorSamePosition = ExactMatchesList();
+            return sameColorSamePosition.Count;
+        }
 
-            foreach (var color in _initialColors)
+        public int DifferentPositionMatchesCount()
+        {
+            var exactMatches = ExactMatchesList();
+
+            var computerColorsWithoutExactMatches = new List<string>();
+
+            foreach (var color in _computerColors)
             {
-                if (_userColors.Contains(color))
+                computerColorsWithoutExactMatches.Add(color);
+
+                if (exactMatches.Contains(color))
                 {
-                    sameColorsDifferentPosition++;
+                    computerColorsWithoutExactMatches.Remove(color);
                 }
             }
-            
-            for (int i = 0; i < _initialColors.Length; i++)
+
+            var differentPositionMatchesCount = 0;
+
+            foreach (var color in _userColors)
             {
-                if (_initialColors[i] == _userColors[i])
+                if (computerColorsWithoutExactMatches.Contains(color))
                 {
-                    sameColorsDifferentPosition--;
+                    differentPositionMatchesCount++;
+                    computerColorsWithoutExactMatches.Remove(color);
                 }
             }
-            
-            return sameColorsDifferentPosition;
+
+            return differentPositionMatchesCount;
         }
     }
 }

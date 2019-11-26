@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb7a7232-6cf5-4687-a631-cbb31afa35f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MasterMind.Tests/EndToEndTests/GameTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MasterMind/HintsProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MasterMind/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind.Tests/ColorCheckerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/ColorCheckerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterMind.Tests/GameTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/HintsProviderTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterMind.Tests/ProgramTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind.Tests/EndToEndTests/GameTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/EndToEndTests/GameTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind.Tests/HintsProviderTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/HintsProviderTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind.Tests/UserColorProviderTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/UserColorProviderTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind.Tests/bin/Debug/netcoreapp2.2/MasterMind.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/bin/Debug/netcoreapp2.2/MasterMind.Tests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind.Tests/bin/Debug/netcoreapp2.2/MasterMind.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/bin/Debug/netcoreapp2.2/MasterMind.Tests.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind.Tests/bin/Debug/netcoreapp2.2/MasterMind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/bin/Debug/netcoreapp2.2/MasterMind.dll" afterDir="false" />
@@ -18,11 +16,19 @@
       <change beforePath="$PROJECT_DIR$/MasterMind.Tests/obj/Debug/netcoreapp2.2/MasterMind.Tests.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/obj/Debug/netcoreapp2.2/MasterMind.Tests.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind.Tests/obj/Debug/netcoreapp2.2/MasterMind.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/obj/Debug/netcoreapp2.2/MasterMind.Tests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind.Tests/obj/Debug/netcoreapp2.2/MasterMind.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind.Tests/obj/Debug/netcoreapp2.2/MasterMind.Tests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/ColorChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/ColorChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/ColorProviders/IColorProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/ColorProviders/IColorProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/ColorProviders/InitialColorsProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/ColorProviders/InitialColorsProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/ColorProviders/UserColorsProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/ColorProviders/UserColorsProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/Communication/ICommunicationOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Communication/ICommunicationOperations.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterMind/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/HintsProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/HintsProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/NumberGenerator/INumberGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/NumberGenerator/INumberGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/NumberGenerator/RandomNumberGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/NumberGenerator/RandomNumberGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterMind/Validations/IsNotNullValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/Validations/IsNotNullValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/bin/Debug/netcoreapp2.2/MasterMind.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MasterMind/obj/Debug/netcoreapp2.2/MasterMind.pdb" afterDir="false" />
     </list>
@@ -54,6 +60,7 @@
     <setting file="file://$PROJECT_DIR$/MasterMind/Validations/IValidation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind/Validations/CorrectColorValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MasterMind/ColorProviders/IColorProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMindTests/InitialColorsProviderTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind.Tests/EndToEndTests/GameTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MasterMind/HintsProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -67,11 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MasterMind/IConsoleOperations.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/ConsoleOperations.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/RandomChooser/INumberGenerator.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/Colors.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/Hint.cs" />
         <option value="$PROJECT_DIR$/MasterMind/IGame.cs" />
         <option value="$PROJECT_DIR$/MasterMind/Game/Game.cs" />
         <option value="$PROJECT_DIR$/MasterMindTests/Tests.cs" />
@@ -94,7 +96,6 @@
         <option value="$PROJECT_DIR$/MasterMind/InputIsNotNull.cs" />
         <option value="$PROJECT_DIR$/MasterMind/InputNotNullValidator.cs" />
         <option value="$PROJECT_DIR$/MasterMind/IsNotNullValidator.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" />
         <option value="$PROJECT_DIR$/MasterMind.Tests/PlayerTests.cs" />
         <option value="$PROJECT_DIR$/MasterMind.Tests/CorrectColorCountValidatorTests.cs" />
         <option value="$PROJECT_DIR$/MasterMind.Tests/InputValidatorTests.cs" />
@@ -104,20 +105,26 @@
         <option value="$PROJECT_DIR$/MasterMind/UserColorsProvider.cs" />
         <option value="$PROJECT_DIR$/MasterMind/Enum/Colors.cs" />
         <option value="$PROJECT_DIR$/MasterMind/HelperCapitalLetter.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/ColorProviders/UserColorsProvider.cs" />
         <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColorValidator.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/ColorProviders/InitialColorsProvider.cs" />
-        <option value="$PROJECT_DIR$/MasterMind.Tests/UserColorProviderTests.cs" />
         <option value="$PROJECT_DIR$/MasterMind.Tests/InitialColorsProviderTests.cs" />
         <option value="$PROJECT_DIR$/MasterMind.Tests/HintsProvider.cs" />
-        <option value="$PROJECT_DIR$/MasterMind.Tests/HintsProviderTests.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/ColorChecker.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/HintsProvider.cs" />
-        <option value="$PROJECT_DIR$/MasterMind.Tests/ColorCheckerTests.cs" />
-        <option value="$PROJECT_DIR$/MasterMind/Game.cs" />
         <option value="$PROJECT_DIR$/MasterMind/Program.cs" />
         <option value="$PROJECT_DIR$/MasterMind.Tests/GameTests.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/ColorChecker.cs" />
+        <option value="$PROJECT_DIR$/MasterMind.Tests/UserColorProviderTests.cs" />
+        <option value="$PROJECT_DIR$/MasterMind.Tests/HintsProviderTests.cs" />
+        <option value="$PROJECT_DIR$/MasterMind.Tests/ColorCheckerTests.cs" />
         <option value="$PROJECT_DIR$/MasterMind.Tests/EndToEndTests/GameTests.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/HintsProvider.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Game.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Validations/IsNotNullValidator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Validations/CorrectColorCountValidator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/NumberGenerator/RandomNumberGenerator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/NumberGenerator/INumberGenerator.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/Communication/ICommunicationOperations.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/ColorProviders/InitialColorsProvider.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/ColorProviders/IColorProvider.cs" />
+        <option value="$PROJECT_DIR$/MasterMind/ColorProviders/UserColorsProvider.cs" />
       </list>
     </option>
   </component>
@@ -181,7 +188,7 @@
       <workItem from="1573689438168" duration="9498000" />
       <workItem from="1573970794660" duration="1977000" />
       <workItem from="1574121687769" duration="65198000" />
-      <workItem from="1574379360319" duration="20356000" />
+      <workItem from="1574379360319" duration="39940000" />
     </task>
     <servers />
   </component>
@@ -213,32 +220,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MasterMind/ColorProviders/UserColorsProvider.cs</url>
-          <line>53</line>
-          <properties documentPath="$PROJECT_DIR$/MasterMind/ColorProviders/UserColorsProvider.cs" initialLine="53">
-            <startOffsets>
-              <option value="1888" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1948" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MasterMind/Game.cs</url>
-          <line>19</line>
-          <properties documentPath="$PROJECT_DIR$/MasterMind/Game.cs" initialLine="17">
-            <startOffsets>
-              <option value="599" />
-            </startOffsets>
-            <endOffsets>
-              <option value="626" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -6,7 +6,7 @@ using MasterMind.Validations;
 using Moq;
 using NUnit.Framework;
 
-namespace Tests
+namespace TestProject1.EndToEndTests
 {
     public class GameTests
     {
@@ -74,7 +74,7 @@ namespace Tests
 
         [Test]
         public void
-            When_User_Guesses_3_Colors_In_Different_Position_And_1_In_Correct_Positon_3_Hints_Saying_White__And_One_Black_Is_Displayed()
+            When_User_Guesses_3_Colors_In_Different_Position_And_1_In_Correct_Position_3_Hints_Saying_White__And_One_Black_Is_Displayed()
         {
             //arrange
             var consoleOperations = new Mock<ICommunicationOperations>();

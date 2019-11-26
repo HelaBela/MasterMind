@@ -2,6 +2,6 @@ namespace MasterMind.ColorProviders
 {
     public interface IColorProvider
     {
-         string[] ProvideColors();
+        string[] ProvideColors();
     }
 }

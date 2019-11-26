@@ -14,7 +14,7 @@ namespace Tests
     public class HintsProviderTests
     {
         [Test]
-        public void When_2_Colors_Match_Position_SameColorsSamePosition_Returns_2()
+        public void When_2_Colors_Are_Exact_Match_And_1_Color_Is_Matching_But_In_Wrong_Postion_2_Black_And_1_White_Hints_Are_Displayed()
         {
             //Arrange
 

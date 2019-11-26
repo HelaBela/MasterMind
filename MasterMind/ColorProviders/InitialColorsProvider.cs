@@ -4,7 +4,7 @@ using MasterMind.NumberGenerator;
 
 namespace MasterMind.ColorProviders
 {
-    public class InitialColorsProvider:IColorProvider
+    public class InitialColorsProvider : IColorProvider
     {
         private readonly INumberGenerator _numberGenerator;
 

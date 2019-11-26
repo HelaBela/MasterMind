@@ -10,7 +10,7 @@ namespace MasterMind.Validations
             {
                 return false;
             }
-            
+
             return true;
         }
 

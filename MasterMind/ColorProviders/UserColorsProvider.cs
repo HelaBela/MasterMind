@@ -6,7 +6,7 @@ using MasterMind.Validations;
 
 namespace MasterMind.ColorProviders
 {
-    public class UserColorsProvider:IColorProvider
+    public class UserColorsProvider : IColorProvider
     {
         private readonly List<IValidation> _validations;
         private readonly ICommunicationOperations _communicationOperations;
@@ -33,7 +33,8 @@ namespace MasterMind.ColorProviders
                     {
                         Console.WriteLine(validation.DisplayErrorMessage());
                         break;
-                    } 
+                    }
+
                     listOfPassedValidations.Add(validation);
                 }
             }
@@ -49,7 +50,7 @@ namespace MasterMind.ColorProviders
             return input;
         }
 
-        private List<string> UserInputToLowerCase(string userInput)
+        private static List<string> UserInputToLowerCase(string userInput)
         {
             var splitInput = userInput.Split(",").Select(s => s.Trim());
             var splitInputList = new List<string>();
@@ -62,7 +63,5 @@ namespace MasterMind.ColorProviders
 
             return splitInputList;
         }
-
-       
     }
 }

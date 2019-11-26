@@ -30,15 +30,14 @@ namespace MasterMind
                 if (_counter == 60)
                 {
                     _communicationOperations.WriteLine("You lost. Only 60 attempts allowed.");
-                } 
+                }
 
-                if (colorChecker.SameColorsSamePosition() == 4)
+                if (colorChecker.ExactMatchesCount() == 4)
                 {
                     _communicationOperations.WriteLine("You won! Congratulations :)");
                     thereIsNoWinner = false;
                 }
             }
-            
         }
     }
 }

@@ -81,7 +81,7 @@ namespace Tests
         }
         
         [Test]
-        public void User_Provides_5_Colors_And_User_Is_Promped_To_Priovide_New_Colors()
+        public void User_Provides_5_Colors_And_Is_Asked_To_Priovide_New_Colors()
         {
             //arrange
 
@@ -108,7 +108,7 @@ namespace Tests
         }
         
         [Test]
-        public void User_Provides_3_Colors_From_The_List_And_One_Wrong_Color_And_Is_Prompted_To_Provided_Colors_From_List()
+        public void User_Provides_3_Colors_From_The_List_And_One_Wrong_Color_And_Is_Prompted_To_Provided_Colors_From_The_List()
         {
             //arrange
 
