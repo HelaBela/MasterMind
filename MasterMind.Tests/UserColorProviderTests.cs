@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using MasterMind;
 using MasterMind.ColorProviders;
 using MasterMind.Communication;
 using MasterMind.Validations;
 using Moq;
 using NUnit.Framework;
 
-namespace Tests
+namespace MasterMind.Tests
 {
     public class UserColorProviderTests
     {

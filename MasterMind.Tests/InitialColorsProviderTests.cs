@@ -1,11 +1,9 @@
-using System.Reflection;
-using MasterMind;
 using MasterMind.ColorProviders;
 using MasterMind.NumberGenerator;
-using NUnit.Framework;
 using Moq;
+using NUnit.Framework;
 
-namespace Tests
+namespace MasterMind.Tests
 {
     public class Tests
     {

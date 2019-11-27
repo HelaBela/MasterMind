@@ -34,7 +34,7 @@ namespace MasterMind
 
                 if (colorChecker.ExactMatchesCount() == 4)
                 {
-                    _communicationOperations.WriteLine("You won! Congratulations :)");
+                    _communicationOperations.WriteLine($"You won! Congratulations :) It took you {_counter} attempts");
                     thereIsNoWinner = false;
                 }
             }

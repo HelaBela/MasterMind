@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using MasterMind;
 using MasterMind.ColorProviders;
 using MasterMind.Communication;
 using MasterMind.Enum;
@@ -9,7 +7,7 @@ using MasterMind.Validations;
 using Moq;
 using NUnit.Framework;
 
-namespace Tests
+namespace MasterMind.Tests
 {
     public class HintsProviderTests
     {
@@ -21,7 +19,7 @@ namespace Tests
             var randomNumberGenerator = new Mock<INumberGenerator>();
            
             var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
-            var colors = Enum.GetValues(typeof(Colors));
+            var colors = System.Enum.GetValues(typeof(Colors));
             var validations = new List<IValidation> {new IsNotNullValidator(), new CorrectColorValidator(), new CorrectColorCountValidator()};
 
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, colors.Length)).Returns(1).Returns(2).Returns(3)

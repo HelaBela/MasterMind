@@ -1,13 +1,11 @@
 using System;
-using System.Collections.Generic;
-using MasterMind;
 using MasterMind.ColorProviders;
 using MasterMind.Enum;
 using MasterMind.NumberGenerator;
 using Moq;
 using NUnit.Framework;
 
-namespace Tests
+namespace MasterMind.Tests
 {
     public class ColorCheckerTests
     {
@@ -16,7 +14,7 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            _colors = Enum.GetValues(typeof(Colors));
+            _colors = System.Enum.GetValues(typeof(Colors));
         }
 
         [Test]

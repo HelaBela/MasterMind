@@ -40,7 +40,6 @@ namespace MasterMind
             var exactMatches = ExactMatchesList();
 
             var computerColorsWithoutExactMatches = new List<string>();
-
             foreach (var color in _computerColors)
             {
                 computerColorsWithoutExactMatches.Add(color);

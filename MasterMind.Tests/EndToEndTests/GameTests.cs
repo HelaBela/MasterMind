@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using MasterMind;
 using MasterMind.ColorProviders;
 using MasterMind.Communication;
 using MasterMind.Validations;
 using Moq;
 using NUnit.Framework;
 
-namespace TestProject1.EndToEndTests
+namespace MasterMind.Tests.EndToEndTests
 {
     public class GameTests
     {
