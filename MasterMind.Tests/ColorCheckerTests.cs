@@ -17,30 +17,25 @@ namespace MasterMind.Tests
             _colors = System.Enum.GetValues(typeof(Colors));
         }
 
-        [Test]
-        public void When_2_Colors_Match_Position_ExactMatchesCount_Returns_2()
+        [TestCase(new[] {"Red", "Blue", "Green", "Green"}, new[] {"Red", "Blue", "Orange", "Purple"}, 2, 0)]
+       [TestCase(new[] {"Red", "Blue", "Purple", "Purple"}, new[] {"Purple", "Purple", "Green", "Green"}, 0, 2)]
+        public void When_2_Colors_Match_Position_ExactMatchesCount_Returns_2(string[] userColors, string[] initialColors, int expectedExactMatchesCount, int expectedDifferentPositionsMatchsCount
+       )
         {
             //Arrange
-
-            var randomNumberGenerator = new Mock<INumberGenerator>();
-
-            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
-
-            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(1).Returns(2).Returns(3)
-                .Returns(4);
-
-            var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new[] {"Red", "Blue", "Orange", "Purple"};
-
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var exactMatchesCount = colorChecker.ExactMatchesCount();
+            var actualExactMatchesCount = colorChecker.ExactMatchesCount(userColors, initialColors);
+            var actualDifferentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount(userColors, initialColors);
 
             //Assert
 
-            Assert.AreEqual(2, exactMatchesCount);
+            Assert.AreEqual(expectedExactMatchesCount, actualExactMatchesCount);
+            Assert.AreEqual(expectedDifferentPositionsMatchsCount, actualDifferentPositionMatchesCount);
+
         }
 
         [Test]
@@ -48,24 +43,16 @@ namespace MasterMind.Tests
             When_2_Colors_Are_The_Same_At_Different_Position_ExactMatchesCount_Returns_0_And_DifferentPositionCount_Returns_2()
         {
             //Arrange
-
-            var randomNumberGenerator = new Mock<INumberGenerator>();
-
-            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
-
-
-            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(4).Returns(4).Returns(2)
-                .Returns(2);
-
-            var initialColors = initialColorsProvider.ProvideColors();
+            
+            var initialColors = new[] {"Purple", "Purple", "Green", "Green"};
             var userColors = new[] {"Red", "Blue", "Purple", "Purple"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var exactMatchesCount = colorChecker.ExactMatchesCount();
-            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount();
+            var exactMatchesCount = colorChecker.ExactMatchesCount(userColors, initialColors);
+            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -78,20 +65,15 @@ namespace MasterMind.Tests
         public void When_2_Colors_Are_The_Same_At_Same_Positions_DifferentPositionMatchesCount_Returns_0()
         {
             //Arrange
-
-            var randomNumberGenerator = new Mock<INumberGenerator>();
-            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
-            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(0).Returns(1).Returns(5)
-                .Returns(5);
-
-            var initialColors = initialColorsProvider.ProvideColors();
+            
+            var initialColors =  new[] {"Red", "Blue", "Yellow", "Yellow"};
             var userColors = new[] {"Red", "Blue", "Orange", "Purple"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount();
+            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -105,19 +87,14 @@ namespace MasterMind.Tests
         {
             //Arrange
 
-            var randomNumberGenerator = new Mock<INumberGenerator>();
-            var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
-            randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(1).Returns(2).Returns(3)
-                .Returns(4);
-
-            var initialColors = initialColorsProvider.ProvideColors();
+            var initialColors = new[] {"Blue", "Green", "Orange", "Purple"};
             var userColors = new[] {"Red", "Blue", "Orange", "Purple"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var sameColorsSamePosition = colorChecker.ExactMatchesCount();
+            var sameColorsSamePosition = colorChecker.ExactMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -135,14 +112,14 @@ namespace MasterMind.Tests
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, _colors.Length)).Returns(0).Returns(0).Returns(0)
                 .Returns(2);
 
-            var initialColors = initialColorsProvider.ProvideColors();
+            var initialColors = new[] {"Red", "Green", "Green", "Green"};
             var userColors = new[] {"Green", "Green", "Green", "Green"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount();
+            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -163,11 +140,11 @@ namespace MasterMind.Tests
             var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new[] {"Green", "Green", "Green", "Red"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount();
+            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -188,11 +165,11 @@ namespace MasterMind.Tests
             var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new[] {"Red", "Red", "Red", "Green"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount();
+            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -214,11 +191,11 @@ namespace MasterMind.Tests
             var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new[] {"Red", "Red", "Red", "Green"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var exactMatchesCount = colorChecker.ExactMatchesCount();
+            var exactMatchesCount = colorChecker.ExactMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -240,11 +217,11 @@ namespace MasterMind.Tests
             var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new[] {"Green", "Green", "Green", "Green"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var sameColorSamePosition = colorChecker.ExactMatchesCount();
+            var sameColorSamePosition = colorChecker.ExactMatchesCount(userColors, initialColors);
 
             //Assert
 
@@ -266,12 +243,12 @@ namespace MasterMind.Tests
             var initialColors = initialColorsProvider.ProvideColors();
             var userColors = new[] {"Green", "Red", "Red", "Green"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
+            var colorChecker = new ColorChecker();
 
             //Act
 
-            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount();
-            var exactMatchesCount = colorChecker.ExactMatchesCount();
+            var differentPositionMatchesCount = colorChecker.DifferentPositionMatchesCount(userColors, initialColors);
+            var exactMatchesCount = colorChecker.ExactMatchesCount(userColors, initialColors);
 
             //Assert
 

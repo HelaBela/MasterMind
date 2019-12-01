@@ -5,42 +5,23 @@ namespace MasterMind
 {
     public class ColorChecker
     {
-        private readonly string[] _userColors;
-        private readonly string[] _computerColors;
-
-        public ColorChecker(string[] userColors, string[] computerColors)
+        private List<string> ExactMatchesList(string[] userColours, string[] initialColours)
         {
-            _userColors = userColors;
-            _computerColors = computerColors;
+            return initialColours.Where((t, i) => t == userColours[i]).ToList();
         }
 
-        private List<string> ExactMatchesList()
+        public int ExactMatchesCount(string[] userColours, string[] initialColours)
         {
-            var sameColorsSamePosition = new List<string>();
-
-            for (int i = 0; i < _computerColors.Length; i++)
-            {
-                if (_computerColors[i] == _userColors[i])
-                {
-                    sameColorsSamePosition.Add(_computerColors[i]);
-                }
-            }
-
-            return sameColorsSamePosition;
-        }
-
-        public int ExactMatchesCount()
-        {
-            var sameColorSamePosition = ExactMatchesList();
+            var sameColorSamePosition = ExactMatchesList(userColours, initialColours);
             return sameColorSamePosition.Count;
         }
 
-        public int DifferentPositionMatchesCount()
+        public int DifferentPositionMatchesCount(string[] userColours, string[] initialColours)
         {
-            var exactMatches = ExactMatchesList();
+            var exactMatches = ExactMatchesList(userColours, initialColours);
 
             var computerColorsWithoutExactMatches = new List<string>();
-            foreach (var color in _computerColors)
+            foreach (var color in initialColours)
             {
                 computerColorsWithoutExactMatches.Add(color);
 
@@ -52,7 +33,7 @@ namespace MasterMind
 
             var differentPositionMatchesCount = 0;
 
-            foreach (var color in _userColors)
+            foreach (var color in userColours)
             {
                 if (computerColorsWithoutExactMatches.Contains(color))
                 {

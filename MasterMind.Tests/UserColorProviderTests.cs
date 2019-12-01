@@ -24,7 +24,7 @@ namespace MasterMind.Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"Green", "Red", "Blue", "Orange"};
+            var expectedColors = new [] {"Green", "Red", "Blue", "Orange"};
             
             //assert
 
@@ -46,7 +46,7 @@ namespace MasterMind.Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"Green", "Red", "Blue", "Orange"};
+            var expectedColors = new [] {"Green", "Red", "Blue", "Orange"};
             
             //assert
 
@@ -68,7 +68,7 @@ namespace MasterMind.Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"Green", "Red", "Blue", "Red"};
+            var expectedColors = new [] {"Green", "Red", "Blue", "Red"};
             
             //assert
             
@@ -80,7 +80,7 @@ namespace MasterMind.Tests
         }
         
         [Test]
-        public void User_Provides_5_Colors_And_Is_Asked_To_Priovide_New_Colors()
+        public void User_Provides_5_Colors_And_Is_Asked_To_Provide_New_Colors()
         {
             //arrange
 
@@ -95,7 +95,7 @@ namespace MasterMind.Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"Red", "Blue", "Orange", "Red"};
+            var expectedColors = new [] {"Red", "Blue", "Orange", "Red"};
 
             //assert
 
@@ -123,7 +123,7 @@ namespace MasterMind.Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"Green", "Red", "Blue", "Blue"};
+            var expectedColors = new [] {"Green", "Red", "Blue", "Blue"};
 
             //assert
 
@@ -150,7 +150,7 @@ namespace MasterMind.Tests
             //act 
 
             var colors = validator.ProvideColors();
-            var expectedColors = new string[] {"Green", "Red", "Blue", "Blue"};
+            var expectedColors = new [] {"Green", "Red", "Blue", "Blue"};
 
             //assert
             

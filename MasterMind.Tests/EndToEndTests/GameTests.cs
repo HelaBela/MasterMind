@@ -107,5 +107,39 @@ namespace MasterMind.Tests.EndToEndTests
             consoleOperations.Verify(
                 m => m.WriteLine((It.Is<string>(c => c == "White"))));
         }
+        
+        
+        [Test]
+        public void
+            The_Game_Ends_after_60_tries()
+        {
+            //arrange
+            var consoleOperations = new Mock<ICommunicationOperations>();
+            var initialColors = new[] {"Green", "Red", "Blue", "Orange"};
+            var validations = new List<IValidation>
+            {
+                new IsNotNullValidator(),
+                new CorrectColorValidator(),
+                new CorrectColorCountValidator()
+            };
+
+            var userColorsProvider = new UserColorsProvider(validations, consoleOperations.Object);
+            var game = new Game(consoleOperations.Object, userColorsProvider);
+            
+
+            //act
+            for (int i = 0; i <61; i++) {
+                consoleOperations.SetupSequence(s => s.Read()).Returns("Blue, Red, Orange, Green")
+                    .Returns("Green, Red, Blue, Orange");
+                game.Play(initialColors);
+            }
+            
+
+            //assert
+
+            consoleOperations.Verify(
+                m => m.WriteLine((It.Is<string>(c => c == "You lost. Only 60 attempts allowed."))));
+         
+        }
     }
 }

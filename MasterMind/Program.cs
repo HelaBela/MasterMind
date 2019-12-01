@@ -23,6 +23,7 @@ namespace MasterMind
             var userColorProvider = new UserColorsProvider(validations, communication);
             var initialColorsProvider = new InitialColorsProvider(new RandomNumberGenerator());
             var initialColors = initialColorsProvider.ProvideColors();
+           
             
             var game = new Game(communication, userColorProvider);
             game.Play(initialColors);

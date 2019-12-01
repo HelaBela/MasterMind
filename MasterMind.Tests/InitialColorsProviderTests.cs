@@ -19,7 +19,7 @@ namespace MasterMind.Tests
             
             //act 
 
-            var expectedColors = new string[] {"Blue", "Green", "Green", "Red"};
+            var expectedColors = new [] {"Blue", "Green", "Green", "Red"};
 
             var randomColors = initialColorProvider.ProvideColors();
             

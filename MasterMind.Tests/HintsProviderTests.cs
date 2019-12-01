@@ -3,7 +3,6 @@ using MasterMind.ColorProviders;
 using MasterMind.Communication;
 using MasterMind.Enum;
 using MasterMind.NumberGenerator;
-using MasterMind.Validations;
 using Moq;
 using NUnit.Framework;
 
@@ -12,7 +11,7 @@ namespace MasterMind.Tests
     public class HintsProviderTests
     {
         [Test]
-        public void When_2_Colors_Are_Exact_Match_And_1_Color_Is_Matching_But_In_Wrong_Postion_2_Black_And_1_White_Hints_Are_Displayed()
+        public void When_2_Colors_Are_Exact_Match_And_1_Color_Is_Matching_But_In_Wrong_Position_2_Black_And_1_White_Hints_Are_Displayed()
         {
             //Arrange
 
@@ -20,32 +19,24 @@ namespace MasterMind.Tests
            
             var initialColorsProvider = new InitialColorsProvider(randomNumberGenerator.Object);
             var colors = System.Enum.GetValues(typeof(Colors));
-            var validations = new List<IValidation> {new IsNotNullValidator(), new CorrectColorValidator(), new CorrectColorCountValidator()};
 
             randomNumberGenerator.SetupSequence(s => s.RandomNumber(0, colors.Length)).Returns(1).Returns(2).Returns(3)
                 .Returns(4);
 
             var initialColors = initialColorsProvider.ProvideColors();
-            var userColors = new string[] {"Red", "Blue", "Orange", "Purple"};
+            var userColors = new [] {"Red", "Blue", "Orange", "Purple"};
 
-            var colorChecker = new ColorChecker(userColors, initialColors);
-
-            var communicationOperations = new Mock<ICommunicationOperations>();
-
-            var hints = new HintsProvider(colorChecker,communicationOperations.Object);
+            var hintsProvider = new HintsProvider();
 
             //Act
 
-            hints.GiveHints();
+           var hints = hintsProvider.GiveHints(userColors,initialColors);
+     
 
             //Assert
-
-            communicationOperations.Verify(
-                m => m.WriteLine((It.Is<string>(c => c == "White"))));
-            communicationOperations.Verify(
-                m => m.WriteLine((It.Is<string>(c => c == "Black"))));
-            communicationOperations.Verify(
-                m => m.WriteLine((It.Is<string>(c => c == "Black"))));
+            Assert.AreEqual("White", hints[0], "The first hint should be white");
+            Assert.AreEqual("Black", hints[1], "The second hint should be black");
+            Assert.AreEqual("Black", hints[2], "The third hint should be black");
 
         }
     }
